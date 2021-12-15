@@ -1,5 +1,5 @@
 {
-  "清除console.log,太霸道，项目里好像全清了_(:з)∠)_": {
+  "清除console.log": {
     "prefix": "clearlog",
     "body": [
       "console.log = () => null"
@@ -86,25 +86,6 @@
     "body": [
       "const $1 = $2.flat(Infinity);",
       "console.log($1)"
-    ]
-  },
-  "数组去重": {
-    "prefix": "arr-reduce",
-    "body": [
-      "let empty_obj = {}",
-      "let aggregate = list.reduce((cur, next) => {",
-      "   console.log(next.$1, empty_obj[next.$1])",
-      "   empty_obj[next.$1] ? '' : empty_obj[next.$1] = true && cur.push(next)",
-      "   return cur",
-      "}, []) // 设置cur默认类型为数组，并且初始值为空的数组"
-    ]
-  },
-  "resposne返回": {
-    "prefix": "ifcode",
-    "body": [
-      "if (res.status_code === 1) {",
-      "  this.$message.success(res.msg)",
-      "}"
     ]
   },
   "解析url参数": {
