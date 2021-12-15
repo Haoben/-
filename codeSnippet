@@ -1,0 +1,118 @@
+{
+  "清除console.log,太霸道，项目里好像全清了_(:з)∠)_": {
+    "prefix": "clearlog",
+    "body": [
+      "console.log = () => null"
+    ]
+  },
+  "简单的排序": {
+    "prefix": "sortarr",
+    "body": [
+      "// a-b是正序，反之倒叙",
+      "$1.sort((a, b) => $2 - $3)"
+    ]
+  },
+  "识别变量类型，绝不会出错": {
+    "prefix": "clgtype",
+    "body": [
+      "console.log(Object.prototype.toString.call($1))"
+    ]
+  },
+  "复制文字": {
+    "prefix": "copytxt",
+    "body": [
+      "navigator.clipboard.writeText($1)"
+    ]
+  },
+  "console": {
+    "prefix": "clg",
+    "body": [
+      "console.log($1)"
+    ]
+  },
+  "交换数组对应索引的值": {
+    "prefix": "jiaohuan",
+    "body": [
+      ";[$1[$2], $1[$3]] = [$1[$3], $1[$2]]"
+    ]
+  },
+  "xxx": {
+    "prefix": "instanceof",
+    "body": [
+      "// a instanceof b",
+      "// 用于检测构造函数/b的 prototype 属性是否出现在某个实例对象/a的原型链上。",
+      ";[$1[$2], $1[$3]] = [$1[$3], $1[$2]]"
+    ]
+  },
+  // 和vararr区别是一个自动填充 0-num 一个需要填充指定内容
+  "创建一个数组": {
+    "prefix": "c-arr",
+    "body": [
+      "[...Array($1).keys()]"
+    ]
+  },
+  "生成一个新数组": {
+    "prefix": "vararr",
+    "body": [
+      "const $1 = Array($2).fill('$3')"
+    ]
+  },
+  "13位随机字符串": {
+    "prefix": "uuid",
+    "body": [
+      "Math.random().toString(16).substring(2)"
+    ]
+  },
+  "数字格式化": {
+    "prefix": "intnum",
+    "body": [
+      "$1.replace(/\\B(?=(\\d{3})+(?!\\d))/g, ',')"
+    ]
+  },
+  "自执行函数": {
+    "prefix": "zizhixing",
+    "body": [
+      "(function () {$1})()"
+    ]
+  },
+  "创造a标签": {
+    "prefix": "link",
+    "body": [
+      "$1.link($2)"
+    ]
+  },
+  "数组扁平化": {
+    "prefix": "int-arr",
+    "body": [
+      "const $1 = $2.flat(Infinity);",
+      "console.log($1)"
+    ]
+  },
+  "数组去重": {
+    "prefix": "arr-reduce",
+    "body": [
+      "let empty_obj = {}",
+      "let aggregate = list.reduce((cur, next) => {",
+      "   console.log(next.$1, empty_obj[next.$1])",
+      "   empty_obj[next.$1] ? '' : empty_obj[next.$1] = true && cur.push(next)",
+      "   return cur",
+      "}, []) // 设置cur默认类型为数组，并且初始值为空的数组"
+    ]
+  },
+  "resposne返回": {
+    "prefix": "ifcode",
+    "body": [
+      "if (res.status_code === 1) {",
+      "  this.$message.success(res.msg)",
+      "}"
+    ]
+  },
+  "解析url参数": {
+    "prefix": "qs",
+    "body": [
+      "const q = {}",
+      "location.search.replace(/([^?&=]+)=([^&]+)/g,(_,k,v)=>q[k]=v)",
+      "console.log(q)"
+    ]
+  }
+}
